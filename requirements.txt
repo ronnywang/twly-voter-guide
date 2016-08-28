@@ -30,3 +30,4 @@ librabbitmq==1.6.1
 # others
 django-pagination==1.0.7
 django-debug-toolbar==1.4
+sqlparse==0.1.19
