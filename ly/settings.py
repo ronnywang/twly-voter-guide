@@ -106,7 +106,7 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'ly',
+        'NAME': os.getenv('DATABASE_DB', 'ly'),
         'USER': os.getenv('DATABASE_USER', 'postgres'),
         'PASSWORD': os.getenv('DATABASE_PASSWORD', 'password'),
         'HOST': os.getenv('DATABASE_HOST', '127.0.0.1'),
@@ -126,7 +126,7 @@ HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
         'URL': os.getenv('ES_URL', 'http://127.0.0.1:9200/'),
-        'INDEX_NAME': 'twly',
+        'INDEX_NAME': os.getenv('ES_INDEX', 'twly'),
     },
 }
 
